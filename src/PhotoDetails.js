@@ -8,7 +8,7 @@ function PhotoDetails({ photo, setSelectedPhoto }) {
     e.preventDefault();
     axios.put(`http://127.0.0.1:8000/api/photos/${photo.id}/${description}`)
       .then(() => {
-        setSelectedPhoto(null);  // Закрити деталі після оновлення
+        setSelectedPhoto(null);  
       })
       .catch(error => {
         console.error('Error updating description:', error);
