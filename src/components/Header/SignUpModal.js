@@ -24,7 +24,7 @@ const SignUpModal = ({ closeModal }) => {
       });
 
       console.log(response.data);
-      closeModal();  // Закрити модальне вікно після успішної реєстрації
+      closeModal();  // Close the modal window after success SigUp
     } catch (error) {
       console.error('Sign up failed:', error.response?.data || error.message);
       setErrorMessage('Sign up failed. Please try again.');
