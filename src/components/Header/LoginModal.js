@@ -11,11 +11,11 @@ const LoginModal = ({ closeModal }) => {
     e.preventDefault();
     try {
         const data = new URLSearchParams();
-        data.append('grant_type', '');  // Залиш порожнім, якщо він не потрібен
-        data.append('username', email);  // Замість email вкажи username, якщо очікується
+        data.append('grant_type', '');  
+        data.append('username', email);  
         data.append('password', password);
-        data.append('scope', '');  // Залиш порожнім, якщо не потрібен
-        data.append('client_id', '');  // Залиш порожнім, якщо не використовується
+        data.append('scope', '');  
+        data.append('client_id', '');  
         data.append('client_secret', '');
 
       const response = await axios.post('http://127.0.0.1:8000/api/auth/login', data, {
@@ -26,7 +26,7 @@ const LoginModal = ({ closeModal }) => {
       });
 
       console.log(response.data);
-      closeModal();  // Закрити модальне вікно після успішного логіну
+      closeModal();  // Close the modal window after success logIn
     } catch (error) {
       console.error('Login failed:', error.response?.data || error.message);
       setErrorMessage('Login failed. Please check your email and password.');
