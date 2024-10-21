@@ -7,7 +7,7 @@ function Gallery() {
   const [photos, setPhotos] = useState([]);
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
-  // Отримуємо всі фотографії при завантаженні компонента
+  
   useEffect(() => {
     axios.get('http://127.0.0.1:8000/api/photos/all')
       .then(response => {
@@ -18,12 +18,12 @@ function Gallery() {
       });
   }, []);
 
-  // Вибір фото для перегляду деталей
+ 
   const handleSelectPhoto = (photo) => {
     setSelectedPhoto(photo);
   };
 
-  // Функція для видалення фото
+  
   const handleDeletePhoto = (photoId) => {
     axios.delete(`http://127.0.0.1:8000/api/photos/${photoId}`)
       .then(() => {
@@ -46,10 +46,10 @@ function Gallery() {
         ))}
       </div>
 
-      {/* Відображення форми для завантаження нових фото */}
+      {/* Forms for download */}
       <PhotoUpload setPhotos={setPhotos} />
 
-      {/* Відображення деталей вибраної фотографії */}
+      {/* Details foto */}
       {selectedPhoto && <PhotoDetails photo={selectedPhoto} setSelectedPhoto={setSelectedPhoto} />}
     </div>
   );
