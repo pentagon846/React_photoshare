@@ -7,13 +7,13 @@ function Header() {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSignUpModal, setShowSignUpModal] = useState(false);
 
-  // Відкрити модальне вікно логіну
+  
   const openLoginModal = () => setShowLoginModal(true);
 
-  // Відкрити модальне вікно реєстрації
+ 
   const openSignUpModal = () => setShowSignUpModal(true);
 
-  // Закрити модальні вікна
+ 
   const closeLoginModal = () => setShowLoginModal(false);
   const closeSignUpModal = () => setShowSignUpModal(false);
 
@@ -31,10 +31,10 @@ function Header() {
         </div>
       </header>
 
-      {/* Модальне вікно для логіну */}
+      {/* Modal window for LogIn */}
       {showLoginModal && <LoginModal closeModal={closeLoginModal} />}
 
-      {/* Модальне вікно для реєстрації */}
+      {/* Modal window for SignUp */}
       {showSignUpModal && <SignUpModal closeModal={closeSignUpModal} />}
     </>
   );
